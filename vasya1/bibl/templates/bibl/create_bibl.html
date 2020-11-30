@@ -1,0 +1,18 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Форма по добавлению книг{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>Форма по добавлению книг</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Название: {{ form.title_bib }}</p>
+        <p>Анонс: {{ form.anons_bib }}</p>
+        <p>Описание:{{ form.full_text_bib }}</p>
+        <p>Дата в формате ч.м.г. : {{ form.date_bib }}</p><br>
+        <span>{{ error }}</span>
+        <button class="btn btn-success" type="submit">Добавить</button>
+    </form>
+    </div>
+{% endblock %}

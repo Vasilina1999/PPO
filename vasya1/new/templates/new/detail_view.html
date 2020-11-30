@@ -1,0 +1,13 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ shop.title }}{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>{{ shop.title }}</h1>
+    <p>{{ shop.date }}</p>
+    <p>{{ shop.full_text }}</p>
+    <a href="{% url 'new-delete' shop.id %}" class="btn btn-danger">Удалить</a>
+    <a href="{% url 'new-update' shop.id %}" class="btn btn-info">Редактировать</a>
+</div>
+{% endblock %}

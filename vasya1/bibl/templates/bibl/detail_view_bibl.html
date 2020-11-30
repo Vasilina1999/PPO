@@ -1,0 +1,13 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ bib.title_bib }}{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>{{ bib.title_bib }}</h1>
+    <p>{{ bib.date_bib }}</p>
+    <p>{{ bib.full_text_bib }}</p>
+    <a href="{% url 'bibl-delete' bib.id %}" class="btn btn-danger">Удалить</a>
+    <a href="{% url 'bibl-update' bib.id %}" class="btn btn-info">Редактировать</a>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Книги{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>Книги онлайн</h1>
+   {% if bib %}
+    {% for el in bib %}
+    <div class="alert alert-warning">
+        <h3>{{ el.title_bib }}</h3>
+        <p>{{ el.anons_bib }}</p>
+        <a href="{% url 'bibl-detail' el.id %}" class="btn btn-warning">Читать</a>
+    </div>
+{% endfor %}
+    {% else %}
+    <p>Нет книг</p>
+    {% endif %}
+    </div>
+{% endblock %}
